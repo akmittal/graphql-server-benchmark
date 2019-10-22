@@ -1,0 +1,26 @@
+type Todo {
+  id: ID!
+  text: String!
+  done: Boolean!
+ 
+}
+enum Status {
+ DONE
+ PENDING
+}
+
+
+type Query {
+  todos(type: Status): [Todo!]!
+}
+
+input NewTodo {
+  text: String!
+  userId: String!
+}
+
+type Mutation {
+  createTodo(input: NewTodo!): Todo!
+  markComplete(id: ID!): Todo!
+  deleteTodo(id: ID!): Todo!
+}
