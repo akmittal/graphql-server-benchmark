@@ -1,0 +1,24 @@
+{
+  "name": "node-apollo-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.9.7",
+    "graphql": "^14.5.8",
+    "knex": "^0.19.5",
+    "pg": "^7.12.1"
+  },
+  "devDependencies": {
+    "pm2": "4.1.2",
+    "ts-node": "8.4.1",
+    "typescript": "3.6.4"
+  }
+}
