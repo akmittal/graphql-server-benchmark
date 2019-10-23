@@ -17,13 +17,22 @@
 - Slowest Request:	120.766305ms
 - Number of Errors:	10
 
-### Get All Todos
+### Get All Todos (limit: 500)
 - 5224 requests in 9.999321349s, 115.85MB read
 - Requests/sec:		522.44
 - Transfer/sec:		11.59MB
 - Avg Req Time:		19.14112ms
 - Fastest Request:	5.511761ms
 - Slowest Request:	186.031624ms
+- Number of Errors:	0
+
+### Get All Todos (limit: 50)
+- 22061 requests in 9.982919123s, 5.24MB read
+- Requests/sec:		2209.87
+- Transfer/sec:		537.36KB
+- Avg Req Time:		4.525143ms
+- Fastest Request:	990.472µs
+- Slowest Request:	108.7194ms
 - Number of Errors:	0
 
 
@@ -39,7 +48,7 @@
 - Number of Errors:	0
 
 
-### Get All Todos
+### Get All Todos (limit: 500)
 - 258638 requests in 9.786205776s, 425.48MB read
 - Requests/sec:		26428.83
 - Transfer/sec:		43.48MB
@@ -48,11 +57,21 @@
 - Slowest Request:	41.66178ms
 - Number of Errors:	0
 
+### Get All Todos (limit: 500)
+- 253261 requests in 9.79353279s, 416.64MB read
+- Requests/sec:		25860.02
+- Transfer/sec:		42.54MB
+- Avg Req Time:		386.697µs
+- Fastest Request:	94.259µs
+- Slowest Request:	22.276224ms
+- Number of Errors:	0
+
 
 ## Requests per second
 |        | Go       | Node    |
 |--------|----------|---------|
 | Create | 23951.57 | 1544.67 |
-| Fetch  | 26428.83 | 522.44  |
+| Fetch(limit: 500)  | 26428.83 | 522.44  |
+| Fetch(limit: 50)  | 25860.02 | 2209.87  |
 
 
