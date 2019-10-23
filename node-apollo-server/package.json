@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "ts-node index.ts",
-    "start:prod":"NODE_ENV=production pm2 start build/index.js -i max"
+    "start:prod":"tsc && NODE_ENV=production pm2 start build/index.js -i max"
   },
   "type": "module",
   "keywords": [],
