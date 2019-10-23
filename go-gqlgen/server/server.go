@@ -19,7 +19,7 @@ func main() {
 	if port == "" {
 		port = defaultPort
 	}
-	db, err := sqlx.Connect("postgres", "user=postgres password=Oracle@123 dbname=postgres sslmode=disable")
+	db, err := sqlx.Connect("postgres", "user=postgres password=password dbname=postgres sslmode=disable")
 	if err != nil {
 		log.Fatal("Error connecting to database", err)
 	}

@@ -7,7 +7,7 @@ const { ApolloServer, gql } = require('apollo-server');
 const connection = knex({
   client: 'pg',
   connection:
-  'postgres://postgres:"Oracle@123"@localhost:5432/postgres?sslmode=disable'
+  'postgres://postgres:"password"@localhost:5432/postgres?sslmode=disable'
 });
 
 const typeDefs = gql`
