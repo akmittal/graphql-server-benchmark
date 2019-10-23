@@ -52,7 +52,7 @@ func (todo *Todo) DeleteTodo(db *sqlx.DB) (Todo, error) {
 }
 
 func AllTodos(db *sqlx.DB) ([]*Todo, error) {
-	rows, err := db.Queryx("SELECT * FROM TODOS")
+	rows, err := db.Queryx("SELECT * FROM TODOS limit 500")
 	var todos []*Todo
 	if err != nil {
 		return todos, err

@@ -39,7 +39,8 @@ export const getByID = async (id:string, connection:Knex): Promise<any> => {
     
 }
 export const allTodos = async (connection:Knex) => {
-    return await connection('todos');
+    const todos  =await connection('todos').select().limit(500)
+    return todos;
 }
 export const createTodo = async (text:string, connection:Knex) => {
     const newTodo = await connection('todos').insert({text, done:false}, ['id', 'text','done']);
