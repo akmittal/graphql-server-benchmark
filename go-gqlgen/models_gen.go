@@ -9,8 +9,7 @@ import (
 )
 
 type NewTodo struct {
-	Text   string `json:"text"`
-	UserID string `json:"userId"`
+	Text string `json:"text"`
 }
 
 type Status string

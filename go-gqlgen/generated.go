@@ -233,7 +233,6 @@ type Query {
 
 input NewTodo {
   text: String!
-  userId: String!
 }
 
 type Mutation {
@@ -1875,12 +1874,6 @@ func (ec *executionContext) unmarshalInputNewTodo(ctx context.Context, obj inter
 		case "text":
 			var err error
 			it.Text, err = ec.unmarshalNString2string(ctx, v)
-			if err != nil {
-				return it, err
-			}
-		case "userId":
-			var err error
-			it.UserID, err = ec.unmarshalNString2string(ctx, v)
 			if err != nil {
 				return it, err
 			}
