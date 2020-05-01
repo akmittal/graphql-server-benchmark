@@ -1,13 +1,20 @@
+import knex from "knex";
+import {
+  createTodoResolver,
+  deleteTodoResolver,
+  getTodosResolver,
+  markCompleteResolver,
+} from "./resolvers/todo";
+import { ApolloServer, gql } from "apollo-server-fastify";
 
-import knex from 'knex';
-import { createTodoResolver, deleteTodoResolver, getTodosResolver, markCompleteResolver } from './resolvers/todo';
-import { ApolloServer, gql } from 'apollo-server';
+import fastify from "fastify";
 
+const app = fastify();
 
 const connection = knex({
-  client: 'pg',
+  client: "pg",
   connection:
-  'postgres://postgres:"Oracle@123"@localhost:5432/postgres?sslmode=disable'
+    'postgres://postgres:"Oracle@123"@localhost:5432/postgres?sslmode=disable',
 });
 
 const typeDefs = gql`
@@ -40,20 +47,21 @@ const typeDefs = gql`
 // schema. This resolver retrieves books from the "books" array above.
 const resolvers = {
   Query: {
-    todos:  getTodosResolver(connection)
+    todos: getTodosResolver(connection),
   },
   Mutation: {
     createTodo: createTodoResolver(connection),
     markComplete: markCompleteResolver(connection),
-    deleteTodo: deleteTodoResolver(connection)
-  }
+    deleteTodo: deleteTodoResolver(connection),
+  },
 };
 
-// The ApolloServer constructor requires two parameters: your schema
-// definition and your set of resolvers.
-const server = new ApolloServer({ typeDefs, resolvers });
-
-// The `listen` method launches a web server.
-server.listen().then(({ url }:{url:string}) => {
-  console.log(`🚀  Server ready at ${url}`);
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
 });
+
+(async function () {
+  app.register(server.createHandler());
+  await app.listen(4000);
+})();

@@ -5,6 +5,16 @@
 
 **Go**: gqlgen, go 1.13
 
+# Run Benchmark 
+
+`go get github.com/tsliwowicz/go-wrk`
+CREATE TODOS
+`go-wrk -c 80 -d 5 -M POST -H 'content-type: application/json' -body '{"operationName":null,"variables":{},"query":"mutation {\n  createTodo(input: {text: \"New Todod\"}) {\n    id\n    text\n    done\n  }\n}\n"}' http://localhost:4000/graphql`
+
+GET TODOS
+`go-wrk -c 80 -d 5 -M POST -H 'content-type: application/json' -body '{"operationName":null,"variables":{},"query":"query {\n  todos {\n    id\n    text\n    done\n  }\n}\n"}' http://localhost:4000/graphql`
+
+
 
 ## Node.js
 

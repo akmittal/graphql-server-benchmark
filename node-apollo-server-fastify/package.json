@@ -5,16 +5,17 @@
   "main": "index.ts",
   "scripts": {
     "start": "ts-node index.ts",
-    "start:prod":"tsc && NODE_ENV=production pm2 start build/index.js -i max"
+    "start:prod": "tsc && NODE_ENV=production pm2 start build/index.js -i max"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apollo-server": "^2.12.0",
+    "apollo-server-fastify": "^2.12.0",
     "graphql": "^15.0.0",
     "knex": "^0.21.0",
-    "pg": "^8.0.0"
+    "pg": "^8.0.0",
+    "fastify": "2.14.0"
   },
   "devDependencies": {
     "pm2": "^4.4.0",
