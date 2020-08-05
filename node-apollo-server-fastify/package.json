@@ -15,7 +15,7 @@
     "graphql": "^15.0.0",
     "knex": "^0.21.0",
     "pg": "^8.0.0",
-    "fastify": "2.14.0"
+    "fastify": "2.15.1"
   },
   "devDependencies": {
     "pm2": "^4.4.0",
