@@ -13,7 +13,7 @@
   "dependencies": {
     "apollo-server": "^2.12.0",
     "graphql": "^15.0.0",
-    "knex": "^0.21.0",
+    "knex": "^2.4.0",
     "pg": "^8.0.0"
   },
   "devDependencies": {
